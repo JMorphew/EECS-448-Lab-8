@@ -2,8 +2,44 @@
 <html>
   <head>
     <title>Example 1</title>
+    <script type="text/javascript">
+      function submit() {
+        let pass1 = document.getElementById("pass1");
+        let pass2 = document.getElementById("pass2");
+        let message = "";
+
+        if (pass1.value.length < 8 || pass2.value.length < 8 ) {
+          message += "Password must be 8 characters.\n"
+        }
+        if (pass1.value !== pass2.value) {
+          message += "Passwords do not match!\n"
+        }
+
+        if (message !== "") {
+          document.getElementById("error-div").innerHTML = message;
+        } else {
+          document.getElementById("error-div").innerHTML = "";
+          document.getElementById("pass-div").innerHTML = "Successfully validated!";
+        }
+      }
+    </script>
   </head>
   <body>
-    <p>This is example 1.</p>
+    <h1>Password Validation</h1>
+    <div>
+      <p id ="error-div" style="color:red"></p>
+      <div id ="pass-div" style="color:green"></div>
+      <p><strong>Enter a password</strong></p>
+      <label>Password:</label>
+      <br>
+      <input type="password" name="pass1" id ="pass1">
+      <br>
+      <label>Confirm Password:</label>
+      <br>
+      <input type="password" name="pass2" id ="pass2">
+      <br>
+      <br>
+      <button onclick="submit()">Validate</button>
+    </div>
   </body>
 </html>
