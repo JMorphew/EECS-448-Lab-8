@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Example 1</title>
+  </head>
+  <body>
+    <h1>Password Validation</h1>
+    <div>
+      <img src="Images/octane.jpg" id="img" width=900 height=574 class="center"><br>
+      <button id="prev" onclick="prev()" class="center" >previous</button>
+	    <button id="next" onclick="next()" class="center">next</button>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    let imageAry = ["octane.jpg",  "huracan.jpg", "fen.jpg", "dodge.jpg", "ford.jpg", "dig.jpg", "goal.jpg", "merc.jpg"];
+    var index = 0;
+    let image = document.getElementById("img");
+
+    function prev() {
+      index += imageAry.length - 1;
+      index %= imageAry.length;
+      image.src = "Images/" + imageAry[index];
+    }
+
+    function next() {
+      index += 1;
+      index %= imageAry.length;
+      image.src = "Images/" + imageAry[index];
+    }
+  </script>
+</html>

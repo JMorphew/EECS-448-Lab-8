@@ -7,14 +7,14 @@
         let pass1 = document.getElementById("pass1");
         let pass2 = document.getElementById("pass2");
         let message = "";
-
+  
         if (pass1.value.length < 8 || pass2.value.length < 8 ) {
           message += "Password must be 8 characters.\n"
         }
         if (pass1.value !== pass2.value) {
           message += "Passwords do not match!\n"
         }
-
+  
         if (message !== "") {
           document.getElementById("error-div").innerHTML = message;
         } else {
@@ -42,4 +42,6 @@
       <button onclick="submit()">Validate</button>
     </div>
   </body>
+
+  
 </html>
